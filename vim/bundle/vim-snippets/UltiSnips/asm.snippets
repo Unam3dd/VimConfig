@@ -1,0 +1,34 @@
+snippet header "header for asm files"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Author 	: stales
+;; Date   	: `date +%Y-%M-%d\ %H:%M:%S`
+;; Filename	: `!p snip.rv = snip.basename`
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+format ELF64
+
+public `!p snip.rv = snip.basename`
+
+section '.text' executable
+
+`!p snip.rv = snip.basename`:
+	$0
+endsnippet
+
+snippet func64 "create new stack frame x64"
+push rbp
+mov rbp, rsp
+$0
+leave
+ret
+endsnippet
+
+snippet func "create new stack frame x86"
+push ebp
+mov ebp, esp
+$0
+leave
+ret
+endsnippet
