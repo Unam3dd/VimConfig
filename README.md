@@ -1,2 +1,2 @@
 # FuckVS
-Best vim config
+My vim
